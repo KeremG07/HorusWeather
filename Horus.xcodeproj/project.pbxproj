@@ -7,19 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36B21BC5295D9D04000EC25F /* CityDetailButtonsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B21BC4295D9D04000EC25F /* CityDetailButtonsCollectionViewCell.swift */; };
+		36C0152B295B124500C467CC /* CitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0152A295B124500C467CC /* CitiesTableViewController.swift */; };
+		36C0152D295B129100C467CC /* LocationCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0152C295B129100C467CC /* LocationCityTableViewCell.swift */; };
+		36C0152F295B1B4500C467CC /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0152E295B1B4500C467CC /* CityTableViewCell.swift */; };
+		36C01531295B1D4200C467CC /* CityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C01530295B1D4200C467CC /* CityDetailViewController.swift */; };
 		36E65F69295228C800667402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E65F68295228C800667402 /* AppDelegate.swift */; };
 		36E65F6B295228C800667402 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E65F6A295228C800667402 /* SceneDelegate.swift */; };
-		36E65F6D295228C800667402 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E65F6C295228C800667402 /* ViewController.swift */; };
 		36E65F70295228C800667402 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36E65F6E295228C800667402 /* Main.storyboard */; };
 		36E65F72295228C900667402 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36E65F71295228C900667402 /* Assets.xcassets */; };
 		36E65F75295228C900667402 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36E65F73295228C900667402 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36B21BC4295D9D04000EC25F /* CityDetailButtonsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailButtonsCollectionViewCell.swift; sourceTree = "<group>"; };
+		36C0152A295B124500C467CC /* CitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableViewController.swift; sourceTree = "<group>"; };
+		36C0152C295B129100C467CC /* LocationCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCityTableViewCell.swift; sourceTree = "<group>"; };
+		36C0152E295B1B4500C467CC /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		36C01530295B1D4200C467CC /* CityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailViewController.swift; sourceTree = "<group>"; };
 		36E65F65295228C800667402 /* Horus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Horus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36E65F68295228C800667402 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36E65F6A295228C800667402 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		36E65F6C295228C800667402 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		36E65F6F295228C800667402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		36E65F71295228C900667402 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36E65F74295228C900667402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +45,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36C01524295AEB1300C467CC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				36C0152A295B124500C467CC /* CitiesTableViewController.swift */,
+				36C01530295B1D4200C467CC /* CityDetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		36C01526295B0DA500C467CC /* CollectionCells */ = {
+			isa = PBXGroup;
+			children = (
+				36B21BC4295D9D04000EC25F /* CityDetailButtonsCollectionViewCell.swift */,
+			);
+			path = CollectionCells;
+			sourceTree = "<group>";
+		};
+		36C01527295B0DAF00C467CC /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				36C0152C295B129100C467CC /* LocationCityTableViewCell.swift */,
+				36C0152E295B1B4500C467CC /* CityTableViewCell.swift */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		36C01529295B0DC600C467CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		36E65F5C295228C800667402 = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +97,12 @@
 		36E65F67295228C800667402 /* Horus */ = {
 			isa = PBXGroup;
 			children = (
+				36C01529295B0DC600C467CC /* Model */,
+				36C01527295B0DAF00C467CC /* TableCells */,
+				36C01526295B0DA500C467CC /* CollectionCells */,
+				36C01524295AEB1300C467CC /* ViewController */,
 				36E65F68295228C800667402 /* AppDelegate.swift */,
 				36E65F6A295228C800667402 /* SceneDelegate.swift */,
-				36E65F6C295228C800667402 /* ViewController.swift */,
 				36E65F6E295228C800667402 /* Main.storyboard */,
 				36E65F71295228C900667402 /* Assets.xcassets */,
 				36E65F73295228C900667402 /* LaunchScreen.storyboard */,
@@ -138,7 +182,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36E65F6D295228C800667402 /* ViewController.swift in Sources */,
+				36C0152F295B1B4500C467CC /* CityTableViewCell.swift in Sources */,
+				36C0152B295B124500C467CC /* CitiesTableViewController.swift in Sources */,
+				36B21BC5295D9D04000EC25F /* CityDetailButtonsCollectionViewCell.swift in Sources */,
+				36C01531295B1D4200C467CC /* CityDetailViewController.swift in Sources */,
+				36C0152D295B129100C467CC /* LocationCityTableViewCell.swift in Sources */,
 				36E65F69295228C800667402 /* AppDelegate.swift in Sources */,
 				36E65F6B295228C800667402 /* SceneDelegate.swift in Sources */,
 			);
