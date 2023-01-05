@@ -295,6 +295,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="cityNameLabel" destination="1ra-d5-3X1" id="68U-iZ-2i8"/>
+                                            <segue destination="U0X-4u-ete" kind="presentation" id="7sC-7t-1z3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -332,6 +333,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTd-oe-NMb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1518.4615384615383" y="303.55450236966823"/>
+        </scene>
+        <!--City Added Info View Controller-->
+        <scene sceneID="H1q-00-47E">
+            <objects>
+                <viewController id="U0X-4u-ete" customClass="CityAddedInfoViewController" customModule="Horus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2gB-pi-w4U">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDq-3z-USs">
+                                <rect key="frame" x="174" y="406.66666666666669" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HKR-EG-TbG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GDq-3z-USs" firstAttribute="centerY" secondItem="HKR-EG-TbG" secondAttribute="centerY" id="HbS-6m-Xgb"/>
+                            <constraint firstItem="GDq-3z-USs" firstAttribute="centerX" secondItem="HKR-EG-TbG" secondAttribute="centerX" id="tN6-nA-X0B"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addedInfo" destination="GDq-3z-USs" id="ZQX-G7-lAl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l1r-EY-wfI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1518" y="1100"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

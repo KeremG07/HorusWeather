@@ -9,7 +9,7 @@ import Foundation
 
 class CityDataSource{ //struct değil class olması gerekiyor mutable olması için
     
-    var CityList :[City] = []
+    private var CityList :[City] = []
     private let baseURL = "https://api.weatherapi.com/v1/search.json?key=49a0562ede0447a280b91717222912&q="
     var delegate: CityDataDelegate?
     init(){

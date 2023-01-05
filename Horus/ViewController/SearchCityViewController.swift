@@ -9,6 +9,8 @@ import UIKit
 
 class SearchCityViewController: UIViewController {
     private let cityDataSource = CityDataSource()
+    private let datasource = userCityDataSource()
+    private var userId=2
     @IBOutlet weak var searchTableView: UITableView!
     
     @IBOutlet weak var citySearchBar: UISearchBar!
@@ -20,18 +22,27 @@ class SearchCityViewController: UIViewController {
         cityDataSource.delegate = self
         
         citySearchBar.delegate = self
+        datasource.readObject(index: 0,userId:self.userId)
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+         if let cell = sender as? SearchCityViewCell,
+            let indexPath = searchTableView.indexPath(for: cell),
+            let city = cityDataSource.getCity(for: indexPath.row),
+            let detailController = segue.destination as? CityAddedInfoViewController{
+             detailController.cityIdentifier = city.name
+             datasource.pushObject(userId: "2", city: city)
+         }
+         
+     }
+    
 
 }
 
@@ -76,6 +87,10 @@ extension SearchCityViewController : SearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.cityDataSource.getListOfCities(search: searchText)
         CityDataLoaded()
+        //datasource.pushObject(userId: "0", city: City(id: 1, name: "0", region: "0", country: "0", lat: 0.1, lon: 0.1))
+        //datasource.readObject()
+        
+        
         
     }
     
