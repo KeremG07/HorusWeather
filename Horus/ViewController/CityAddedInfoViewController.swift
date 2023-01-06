@@ -10,7 +10,7 @@ import UIKit
 class CityAddedInfoViewController: UIViewController {
 
     @IBOutlet weak var addedInfo: UILabel!
-    var cityIdentifier: String?
+    var cityIdentifier: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         addedInfo.text = "\(cityIdentifier) has added to list"

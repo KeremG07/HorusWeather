@@ -10,7 +10,7 @@ import UIKit
 class SearchCityViewController: UIViewController {
     private let cityDataSource = CityDataSource()
     private let datasource = userCityDataSource()
-    private var userId=2
+    private var userId=0
     @IBOutlet weak var searchTableView: UITableView!
     
     @IBOutlet weak var citySearchBar: UISearchBar!
@@ -38,7 +38,8 @@ class SearchCityViewController: UIViewController {
             let city = cityDataSource.getCity(for: indexPath.row),
             let detailController = segue.destination as? CityAddedInfoViewController{
              detailController.cityIdentifier = city.name
-             datasource.pushObject(userId: "2", city: city)
+             datasource.pushObject(userId: String(self.userId), city: city)
+             
          }
          
      }

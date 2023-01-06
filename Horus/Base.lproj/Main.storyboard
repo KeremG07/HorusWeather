@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -152,7 +153,11 @@
                                     <segue destination="Ch0-i3-DNk" kind="presentation" id="xYc-8P-ocg"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Map View" image="map" catalog="system" id="AWw-JD-55K"/>
+                            <barButtonItem title="Map View" image="map" catalog="system" id="AWw-JD-55K">
+                                <connections>
+                                    <segue destination="25N-f2-D5K" kind="show" id="NBS-al-4qg"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -295,7 +300,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="cityNameLabel" destination="1ra-d5-3X1" id="68U-iZ-2i8"/>
-                                            <segue destination="U0X-4u-ete" kind="presentation" id="7sC-7t-1z3"/>
+                                            <segue destination="U0X-4u-ete" kind="show" id="pVQ-xD-9sF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -334,6 +339,32 @@
             </objects>
             <point key="canvasLocation" x="-1518.4615384615383" y="303.55450236966823"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="gJx-Bi-R9X">
+            <objects>
+                <viewController id="25N-f2-D5K" customClass="MapViewController" customModule="Horus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k0p-17-Fra" customClass="UITableView">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GDg-5G-bSz">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kfe-LE-Nqt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="abN-yz-qhf"/>
+                    <connections>
+                        <outlet property="mapView" destination="GDg-5G-bSz" id="hW4-UX-TVU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GeD-u9-AUI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-669" y="304"/>
+        </scene>
         <!--City Added Info View Controller-->
         <scene sceneID="H1q-00-47E">
             <objects>
@@ -356,6 +387,7 @@
                             <constraint firstItem="GDq-3z-USs" firstAttribute="centerX" secondItem="HKR-EG-TbG" secondAttribute="centerX" id="tN6-nA-X0B"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="evT-BG-7YD"/>
                     <connections>
                         <outlet property="addedInfo" destination="GDq-3z-USs" id="ZQX-G7-lAl"/>
                     </connections>

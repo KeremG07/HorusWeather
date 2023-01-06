@@ -15,7 +15,9 @@ class userCityDataSource: ObservableObject{
     private var cityNumber = 0
     private let ref = Database.database(url: "https://horus-weather-app-8eb89-default-rtdb.europe-west1.firebasedatabase.app/").reference()
     
-    
+    func getCityList() -> [City]{
+        return cityList
+    }
     
     func pushObject(userId:String,city:City){
 
@@ -27,6 +29,9 @@ class userCityDataSource: ObservableObject{
     
     func readObject(index:Int,userId:Int){
         //print("readObject",index)
+        if index == 0{
+            cityList.removeAll(keepingCapacity: false)
+        }
         var object:City? = nil
         ref.child(String(userId)).child(String(index))
             .observe(.value){ snapshot in do{
@@ -40,6 +45,7 @@ class userCityDataSource: ObservableObject{
             }catch{
                 print("Can not convert City",index)
                 self.cityNumber = self.cityList.count
+                
             }
                 
             }
