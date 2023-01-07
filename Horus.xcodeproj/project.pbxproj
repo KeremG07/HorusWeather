@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1811267A29658EF9007A5D75 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1811267929658EF9007A5D75 /* GoogleService-Info.plist */; };
+		1811267D296591C0007A5D75 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1811267C296591C0007A5D75 /* FirebaseAnalytics */; };
+		1811267F296591C0007A5D75 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 1811267E296591C0007A5D75 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		18112681296591C0007A5D75 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 18112680296591C0007A5D75 /* FirebaseAuth */; };
+		18112683296591C0007A5D75 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 18112682296591C0007A5D75 /* FirebaseDatabase */; };
+		18112685296591C0007A5D75 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 18112684296591C0007A5D75 /* FirebaseDatabaseSwift */; };
+		1811268B2966C107007A5D75 /* userCityDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1811268A2966C107007A5D75 /* userCityDataSource.swift */; };
+		1811268D2966DFD8007A5D75 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1811268C2966DFD8007A5D75 /* User.swift */; };
+		181126912966F6E1007A5D75 /* CityAddedInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181126902966F6E1007A5D75 /* CityAddedInfoViewController.swift */; };
+		181126932967F2A5007A5D75 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181126922967F2A5007A5D75 /* MapViewController.swift */; };
+		1871794229642C930062F166 /* SearchCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871794129642C930062F166 /* SearchCityViewController.swift */; };
+		1871794429642D6F0062F166 /* SearchCityViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871794329642D6F0062F166 /* SearchCityViewCell.swift */; };
+		1871794629642E590062F166 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871794529642E590062F166 /* City.swift */; };
+		1871794829642EAB0062F166 /* CityDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871794729642EAB0062F166 /* CityDataDelegate.swift */; };
+		1871794A29642EC00062F166 /* CityDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871794929642EC00062F166 /* CityDataSource.swift */; };
+		1871794C296451B90062F166 /* SearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871794B296451B80062F166 /* SearchBarDelegate.swift */; };
+		189CBC222968208400B54C3A /* currentWeatherMapDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189CBC212968208400B54C3A /* currentWeatherMapDataSource.swift */; };
+		189CBC242968265000B54C3A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189CBC232968265000B54C3A /* Weather.swift */; };
+		189CBC26296829BC00B54C3A /* WeatherDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189CBC25296829BC00B54C3A /* WeatherDataDelegate.swift */; };
 		36B21BC5295D9D04000EC25F /* CityDetailButtonsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B21BC4295D9D04000EC25F /* CityDetailButtonsCollectionViewCell.swift */; };
 		36C0152B295B124500C467CC /* CitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0152A295B124500C467CC /* CitiesTableViewController.swift */; };
 		36C0152D295B129100C467CC /* LocationCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0152C295B129100C467CC /* LocationCityTableViewCell.swift */; };
@@ -20,6 +39,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1811267929658EF9007A5D75 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1811268A2966C107007A5D75 /* userCityDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userCityDataSource.swift; sourceTree = "<group>"; };
+		1811268C2966DFD8007A5D75 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		181126902966F6E1007A5D75 /* CityAddedInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAddedInfoViewController.swift; sourceTree = "<group>"; };
+		181126922967F2A5007A5D75 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1871794129642C930062F166 /* SearchCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityViewController.swift; sourceTree = "<group>"; };
+		1871794329642D6F0062F166 /* SearchCityViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityViewCell.swift; sourceTree = "<group>"; };
+		1871794529642E590062F166 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = City.swift; path = Horus/TableCells/City.swift; sourceTree = SOURCE_ROOT; };
+		1871794729642EAB0062F166 /* CityDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CityDataDelegate.swift; path = Horus/TableCells/CityDataDelegate.swift; sourceTree = SOURCE_ROOT; };
+		1871794929642EC00062F166 /* CityDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CityDataSource.swift; path = Horus/TableCells/CityDataSource.swift; sourceTree = SOURCE_ROOT; };
+		1871794B296451B80062F166 /* SearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchBarDelegate.swift; path = Horus/TableCells/SearchBarDelegate.swift; sourceTree = SOURCE_ROOT; };
+		189CBC212968208400B54C3A /* currentWeatherMapDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentWeatherMapDataSource.swift; sourceTree = "<group>"; };
+		189CBC232968265000B54C3A /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		189CBC25296829BC00B54C3A /* WeatherDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataDelegate.swift; sourceTree = "<group>"; };
 		36B21BC4295D9D04000EC25F /* CityDetailButtonsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailButtonsCollectionViewCell.swift; sourceTree = "<group>"; };
 		36C0152A295B124500C467CC /* CitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableViewController.swift; sourceTree = "<group>"; };
 		36C0152C295B129100C467CC /* LocationCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCityTableViewCell.swift; sourceTree = "<group>"; };
@@ -39,6 +72,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18112685296591C0007A5D75 /* FirebaseDatabaseSwift in Frameworks */,
+				1811267D296591C0007A5D75 /* FirebaseAnalytics in Frameworks */,
+				18112681296591C0007A5D75 /* FirebaseAuth in Frameworks */,
+				18112683296591C0007A5D75 /* FirebaseDatabase in Frameworks */,
+				1811267F296591C0007A5D75 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +88,9 @@
 			children = (
 				36C0152A295B124500C467CC /* CitiesTableViewController.swift */,
 				36C01530295B1D4200C467CC /* CityDetailViewController.swift */,
+				1871794129642C930062F166 /* SearchCityViewController.swift */,
+				181126902966F6E1007A5D75 /* CityAddedInfoViewController.swift */,
+				181126922967F2A5007A5D75 /* MapViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -67,6 +108,7 @@
 			children = (
 				36C0152C295B129100C467CC /* LocationCityTableViewCell.swift */,
 				36C0152E295B1B4500C467CC /* CityTableViewCell.swift */,
+				1871794329642D6F0062F166 /* SearchCityViewCell.swift */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -74,6 +116,15 @@
 		36C01529295B0DC600C467CC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1871794529642E590062F166 /* City.swift */,
+				1871794729642EAB0062F166 /* CityDataDelegate.swift */,
+				1871794929642EC00062F166 /* CityDataSource.swift */,
+				1871794B296451B80062F166 /* SearchBarDelegate.swift */,
+				1811268A2966C107007A5D75 /* userCityDataSource.swift */,
+				1811268C2966DFD8007A5D75 /* User.swift */,
+				189CBC212968208400B54C3A /* currentWeatherMapDataSource.swift */,
+				189CBC232968265000B54C3A /* Weather.swift */,
+				189CBC25296829BC00B54C3A /* WeatherDataDelegate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -97,6 +148,7 @@
 		36E65F67295228C800667402 /* Horus */ = {
 			isa = PBXGroup;
 			children = (
+				1811267929658EF9007A5D75 /* GoogleService-Info.plist */,
 				36C01529295B0DC600C467CC /* Model */,
 				36C01527295B0DAF00C467CC /* TableCells */,
 				36C01526295B0DA500C467CC /* CollectionCells */,
@@ -127,6 +179,13 @@
 			dependencies = (
 			);
 			name = Horus;
+			packageProductDependencies = (
+				1811267C296591C0007A5D75 /* FirebaseAnalytics */,
+				1811267E296591C0007A5D75 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				18112680296591C0007A5D75 /* FirebaseAuth */,
+				18112682296591C0007A5D75 /* FirebaseDatabase */,
+				18112684296591C0007A5D75 /* FirebaseDatabaseSwift */,
+			);
 			productName = Horus;
 			productReference = 36E65F65295228C800667402 /* Horus.app */;
 			productType = "com.apple.product-type.application";
@@ -155,6 +214,9 @@
 				Base,
 			);
 			mainGroup = 36E65F5C295228C800667402;
+			packageReferences = (
+				1811267B296591C0007A5D75 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 36E65F66295228C800667402 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -170,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36E65F75295228C900667402 /* LaunchScreen.storyboard in Resources */,
+				1811267A29658EF9007A5D75 /* GoogleService-Info.plist in Resources */,
 				36E65F72295228C900667402 /* Assets.xcassets in Resources */,
 				36E65F70295228C800667402 /* Main.storyboard in Resources */,
 			);
@@ -182,13 +245,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1871794C296451B90062F166 /* SearchBarDelegate.swift in Sources */,
 				36C0152F295B1B4500C467CC /* CityTableViewCell.swift in Sources */,
 				36C0152B295B124500C467CC /* CitiesTableViewController.swift in Sources */,
 				36B21BC5295D9D04000EC25F /* CityDetailButtonsCollectionViewCell.swift in Sources */,
 				36C01531295B1D4200C467CC /* CityDetailViewController.swift in Sources */,
+				189CBC26296829BC00B54C3A /* WeatherDataDelegate.swift in Sources */,
+				1871794429642D6F0062F166 /* SearchCityViewCell.swift in Sources */,
+				189CBC222968208400B54C3A /* currentWeatherMapDataSource.swift in Sources */,
+				181126912966F6E1007A5D75 /* CityAddedInfoViewController.swift in Sources */,
 				36C0152D295B129100C467CC /* LocationCityTableViewCell.swift in Sources */,
+				1871794629642E590062F166 /* City.swift in Sources */,
+				1811268D2966DFD8007A5D75 /* User.swift in Sources */,
+				1871794A29642EC00062F166 /* CityDataSource.swift in Sources */,
 				36E65F69295228C800667402 /* AppDelegate.swift in Sources */,
+				1871794829642EAB0062F166 /* CityDataDelegate.swift in Sources */,
 				36E65F6B295228C800667402 /* SceneDelegate.swift in Sources */,
+				189CBC242968265000B54C3A /* Weather.swift in Sources */,
+				1811268B2966C107007A5D75 /* userCityDataSource.swift in Sources */,
+				1871794229642C930062F166 /* SearchCityViewController.swift in Sources */,
+				181126932967F2A5007A5D75 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +419,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -371,6 +448,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -406,6 +484,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1811267B296591C0007A5D75 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1811267C296591C0007A5D75 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1811267B296591C0007A5D75 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		1811267E296591C0007A5D75 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1811267B296591C0007A5D75 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		18112680296591C0007A5D75 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1811267B296591C0007A5D75 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		18112682296591C0007A5D75 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1811267B296591C0007A5D75 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		18112684296591C0007A5D75 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1811267B296591C0007A5D75 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 36E65F5D295228C800667402 /* Project object */;
 }

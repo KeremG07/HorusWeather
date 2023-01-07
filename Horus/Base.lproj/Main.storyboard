@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XjA-zb-WGd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XjA-zb-WGd">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -147,8 +148,16 @@
                     <navigationItem key="navigationItem" title="Horus Weather" id="pn3-BZ-gEI">
                         <barButtonItem key="leftBarButtonItem" title="Info" image="info.circle" catalog="system" id="f0p-ie-4ny"/>
                         <rightBarButtonItems>
-                            <barButtonItem title="Add City" image="plus" catalog="system" id="zwU-yb-2uS"/>
-                            <barButtonItem title="Map View" image="map" catalog="system" id="AWw-JD-55K"/>
+                            <barButtonItem title="Add City" image="plus" catalog="system" id="zwU-yb-2uS">
+                                <connections>
+                                    <segue destination="Ch0-i3-DNk" kind="presentation" id="xYc-8P-ocg"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Map View" image="map" catalog="system" id="AWw-JD-55K">
+                                <connections>
+                                    <segue destination="25N-f2-D5K" kind="show" id="NBS-al-4qg"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -255,6 +264,137 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U8P-xK-zTT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1516" y="-478"/>
+        </scene>
+        <!--Search City View Controller-->
+        <scene sceneID="0hz-nZ-hMz">
+            <objects>
+                <viewController id="Ch0-i3-DNk" customClass="SearchCityViewController" customModule="Horus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bus-xY-Wj5">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Im6-ct-dca">
+                                <rect key="frame" x="0.0" y="101" width="390" height="709"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCityCell" rowHeight="98" id="qKQ-to-Gif" customClass="SearchCityViewCell" customModule="Horus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="390" height="98"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qKQ-to-Gif" id="c04-VY-TM4">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="98"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ra-d5-3X1">
+                                                    <rect key="frame" x="20" y="38.666666666666664" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1ra-d5-3X1" firstAttribute="leading" secondItem="c04-VY-TM4" secondAttribute="leading" constant="20" symbolic="YES" id="Ttl-xM-bLv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="1ra-d5-3X1" firstAttribute="centerY" secondItem="qKQ-to-Gif" secondAttribute="centerY" id="1bM-nl-KpE"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cityNameLabel" destination="1ra-d5-3X1" id="68U-iZ-2i8"/>
+                                            <segue destination="U0X-4u-ete" kind="show" id="pVQ-xD-9sF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ch0-i3-DNk" id="twn-qQ-UXn"/>
+                                    <outlet property="delegate" destination="Ch0-i3-DNk" id="Plo-jH-Mrf"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="LrB-RX-10c">
+                                <rect key="frame" x="0.0" y="57" width="390" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Ch0-i3-DNk" id="Gdc-EG-7Oz"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="icT-Cl-IeO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Im6-ct-dca" firstAttribute="top" secondItem="LrB-RX-10c" secondAttribute="bottom" constant="-12" id="3Wa-aF-uD2"/>
+                            <constraint firstItem="Im6-ct-dca" firstAttribute="leading" secondItem="icT-Cl-IeO" secondAttribute="leading" id="4WL-0R-ao2"/>
+                            <constraint firstItem="LrB-RX-10c" firstAttribute="width" secondItem="Im6-ct-dca" secondAttribute="width" id="5YG-DS-VTZ"/>
+                            <constraint firstItem="Im6-ct-dca" firstAttribute="bottom" secondItem="icT-Cl-IeO" secondAttribute="bottom" constant="23" id="5n1-Kb-aWF"/>
+                            <constraint firstItem="LrB-RX-10c" firstAttribute="leading" secondItem="icT-Cl-IeO" secondAttribute="leading" id="CvX-cV-Y4y"/>
+                            <constraint firstItem="icT-Cl-IeO" firstAttribute="trailing" secondItem="Im6-ct-dca" secondAttribute="trailing" id="IC6-zD-mZ7"/>
+                            <constraint firstItem="icT-Cl-IeO" firstAttribute="trailing" secondItem="LrB-RX-10c" secondAttribute="trailing" id="esk-pF-GS7"/>
+                            <constraint firstItem="LrB-RX-10c" firstAttribute="top" secondItem="icT-Cl-IeO" secondAttribute="top" constant="10" id="icF-Z5-m5h"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="citySearchBar" destination="LrB-RX-10c" id="47f-RG-u3j"/>
+                        <outlet property="searchTableView" destination="Im6-ct-dca" id="hDG-Ki-daZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VTd-oe-NMb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1518.4615384615383" y="303.55450236966823"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="gJx-Bi-R9X">
+            <objects>
+                <viewController id="25N-f2-D5K" customClass="MapViewController" customModule="Horus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k0p-17-Fra" customClass="UITableView">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GDg-5G-bSz">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kfe-LE-Nqt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="abN-yz-qhf"/>
+                    <connections>
+                        <outlet property="mapView" destination="GDg-5G-bSz" id="hW4-UX-TVU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GeD-u9-AUI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-669" y="304"/>
+        </scene>
+        <!--City Added Info View Controller-->
+        <scene sceneID="H1q-00-47E">
+            <objects>
+                <viewController id="U0X-4u-ete" customClass="CityAddedInfoViewController" customModule="Horus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2gB-pi-w4U">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDq-3z-USs">
+                                <rect key="frame" x="174" y="406.66666666666669" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HKR-EG-TbG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GDq-3z-USs" firstAttribute="centerY" secondItem="HKR-EG-TbG" secondAttribute="centerY" id="HbS-6m-Xgb"/>
+                            <constraint firstItem="GDq-3z-USs" firstAttribute="centerX" secondItem="HKR-EG-TbG" secondAttribute="centerX" id="tN6-nA-X0B"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="evT-BG-7YD"/>
+                    <connections>
+                        <outlet property="addedInfo" destination="GDq-3z-USs" id="ZQX-G7-lAl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l1r-EY-wfI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1518" y="1100"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
