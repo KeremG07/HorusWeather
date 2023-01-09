@@ -9,7 +9,7 @@ import Foundation
 import FirebaseDatabase
 import FirebaseDatabaseSwift
 
-class userCityDataSource: ObservableObject{
+class UserCityDataSource: ObservableObject{
     
     private var cityList : [City] = []
     private var cityNumber = 0
@@ -17,6 +17,13 @@ class userCityDataSource: ObservableObject{
     
     func getCityList() -> [City]{
         return cityList
+    }
+    
+    func getCity(for index: Int) -> City? {
+        guard index < cityList.count else {
+            return nil
+        }
+        return cityList[index]
     }
     
     func pushObject(userId:String,city:City){

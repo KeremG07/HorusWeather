@@ -12,8 +12,8 @@ class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     var userID = 0
-    private let datasource = userCityDataSource()
-    private let weatherDataSoruce = currentWeatherMapDataSource()
+    private let datasource = UserCityDataSource()
+    private let weatherDataSource = currentWeatherMapDataSource()
     override func viewDidLoad() {
         super.viewDidLoad()
         datasource.readObject(index: 0, userId: userID)
@@ -24,11 +24,11 @@ class MapViewController: UIViewController {
             self.mapView.setRegion(region, animated: true)
             for city in cityList{
                 //print(city.name)
-                self.weatherDataSoruce.getWeather(search: city.name)
+                self.weatherDataSource.getWeather(search: city.name)
             }
-            while cityList.count > self.weatherDataSoruce.weatherList.count{}
-            print(self.weatherDataSoruce.weatherList)
-            for weather in self.weatherDataSoruce.weatherList{
+            while cityList.count > self.weatherDataSource.weatherList.count{}
+            print(self.weatherDataSource.weatherList)
+            for weather in self.weatherDataSource.weatherList{
                 var annotaion = MKPointAnnotation()
                 annotaion.coordinate = .init(latitude: CLLocationDegrees(weather.location.lat), longitude: CLLocationDegrees(weather.location.lon))
                 annotaion.title = "\(weather.current.temp_c) °C, \(weather.current.condition.text)"

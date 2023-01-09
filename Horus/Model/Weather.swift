@@ -30,13 +30,13 @@ import Foundation
 */
 struct Weather: Decodable { //decodeable yap
     //let location : Int
-    let current: CurrentW
+    let current: WeatherDegreeAndCondition
     let location: Location
 }
 
 
 
-struct CurrentW:Decodable{
+struct WeatherDegreeAndCondition:Decodable{
     let temp_c:Float
     let condition: Condition
 }
