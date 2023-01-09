@@ -20,12 +20,14 @@ class MapViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
             let cityList = self.datasource.getCityList()
-            let region = MKCoordinateRegion(center: .init(latitude: CLLocationDegrees(cityList[0].lat), longitude: CLLocationDegrees(cityList[0].lon)), latitudinalMeters: 550000, longitudinalMeters: 550000)
+            var coordInfo = self.datasource.getCenter()
+            let region = MKCoordinateRegion(center: .init(latitude: CLLocationDegrees(coordInfo[2]), longitude: CLLocationDegrees(coordInfo[3])), latitudinalMeters: CLLocationDistance(222000*coordInfo[0]), longitudinalMeters: CLLocationDistance(222000*coordInfo[1]))
             self.mapView.setRegion(region, animated: true)
             for city in cityList{
                 //print(city.name)
                 self.weatherDataSource.getWeather(search: city.name)
             }
+            var counter = 0
             while cityList.count > self.weatherDataSource.weatherList.count{}
             print(self.weatherDataSource.weatherList)
             for weather in self.weatherDataSource.weatherList{

@@ -36,10 +36,11 @@ class SearchCityViewController: UIViewController {
          if let cell = sender as? SearchCityViewCell,
             let indexPath = searchTableView.indexPath(for: cell),
             let city = cityDataSource.getCity(for: indexPath.row),
-            let detailController = segue.destination as? CityAddedInfoViewController{
-             detailController.cityIdentifier = city.name
+            let detailController = segue.destination as? CitiesTableViewController{
+             //detailController.cityIdentifier = city.name
              datasource.pushObject(userId: String(self.userId), city: city)
-             
+             self.dismiss(animated: true, completion: nil)
+             //self.navigationController?.popViewController(animated: true) 
          }
          
      }
