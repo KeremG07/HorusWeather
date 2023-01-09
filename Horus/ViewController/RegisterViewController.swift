@@ -11,39 +11,35 @@ import Firebase
 
 
 class RegisterViewController: UIViewController {
+    private let userDataSource = UserDataSource()
 
-    @IBOutlet weak var emailField: UITextField!
-    
-    
-    @IBOutlet weak var passwordField: UITextField!
-    
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var repeatPasswordTextField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        errorLabel.isHidden = true
     }
     
 
     @IBAction func signup(_ sender: UIButton) {
-        guard let email = emailField.text else {return}
-        guard let password = passwordField.text else { return }
-        if email.isEmpty == true{
-            print("Enter email")
-            return
-        }
-        if password.isEmpty == true {
-            print("Enter password")
-            return
-        }
-        Auth.auth().createUser(withEmail: email, password: password) {
-            (dataResult, error) in
-            if let e = error {
-                print("Error \(error?.localizedDescription)")
-            }
-            else {
-                self.performSegue(withIdentifier: "goToApp", sender: self)
-            }
+        guard let username = usernameTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let repeatPassword = repeatPasswordTextField.text else { return }
+        
+        if repeatPassword == password
+            && !username.isEmpty
+            && !password.isEmpty
+            && !repeatPassword.isEmpty {
+            // Send Register Call to Database
+            userDataSource.pushUsernamePasswordToDB(username: username, password: password)
+            // Go back to Login Page
+            _ = navigationController?.popViewController(animated: true)
+        } else {
+            errorLabel.isHidden = false
         }
     
     }
