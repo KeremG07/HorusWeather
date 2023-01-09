@@ -11,13 +11,41 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
     private let userDataSource = UserDataSource()
-
+    
+    @IBOutlet weak var registerContainer: UIView!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    var registerContainerOriginalYPos: CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        // call the 'keyboardWillShow' function when the view controller receive the notification that a keyboard is going to be shown
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+      
+          // call the 'keyboardWillHide' function when the view controlelr receive notification that keyboard is going to be hidden
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        registerContainerOriginalYPos = registerContainer.frame.origin.y
+        
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+            
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+           // if keyboard size is not available for some reason, dont do anything
+           return
+        }
+      
+      // move the register container up by the distance of keyboard height
+        registerContainer.frame.origin.y = registerContainerOriginalYPos - keyboardSize.height + 20
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+      // move back the register container origin to original value
+        registerContainer.frame.origin.y = registerContainerOriginalYPos
     }
     
     @IBAction func login(_ sender: UIButton) {
