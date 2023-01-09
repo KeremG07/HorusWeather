@@ -13,7 +13,7 @@
 		18112681296591C0007A5D75 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 18112680296591C0007A5D75 /* FirebaseAuth */; };
 		18112683296591C0007A5D75 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 18112682296591C0007A5D75 /* FirebaseDatabase */; };
 		18112685296591C0007A5D75 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 18112684296591C0007A5D75 /* FirebaseDatabaseSwift */; };
-		1811268B2966C107007A5D75 /* userCityDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1811268A2966C107007A5D75 /* userCityDataSource.swift */; };
+		1811268B2966C107007A5D75 /* UserCityDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1811268A2966C107007A5D75 /* UserCityDataSource.swift */; };
 		1811268D2966DFD8007A5D75 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1811268C2966DFD8007A5D75 /* User.swift */; };
 		181126912966F6E1007A5D75 /* CityAddedInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181126902966F6E1007A5D75 /* CityAddedInfoViewController.swift */; };
 		181126932967F2A5007A5D75 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181126922967F2A5007A5D75 /* MapViewController.swift */; };
@@ -33,6 +33,7 @@
 		36C0152D295B129100C467CC /* LocationCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0152C295B129100C467CC /* LocationCityTableViewCell.swift */; };
 		36C0152F295B1B4500C467CC /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0152E295B1B4500C467CC /* CityTableViewCell.swift */; };
 		36C01531295B1D4200C467CC /* CityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C01530295B1D4200C467CC /* CityDetailViewController.swift */; };
+		36D70342296B88F100EA48E9 /* UserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D70341296B88F100EA48E9 /* UserDataSource.swift */; };
 		36E65F69295228C800667402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E65F68295228C800667402 /* AppDelegate.swift */; };
 		36E65F6B295228C800667402 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E65F6A295228C800667402 /* SceneDelegate.swift */; };
 		36E65F70295228C800667402 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36E65F6E295228C800667402 /* Main.storyboard */; };
@@ -42,7 +43,7 @@
 
 /* Begin PBXFileReference section */
 		1811267929658EF9007A5D75 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		1811268A2966C107007A5D75 /* userCityDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userCityDataSource.swift; sourceTree = "<group>"; };
+		1811268A2966C107007A5D75 /* UserCityDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCityDataSource.swift; sourceTree = "<group>"; };
 		1811268C2966DFD8007A5D75 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		181126902966F6E1007A5D75 /* CityAddedInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAddedInfoViewController.swift; sourceTree = "<group>"; };
 		181126922967F2A5007A5D75 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		36C0152C295B129100C467CC /* LocationCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCityTableViewCell.swift; sourceTree = "<group>"; };
 		36C0152E295B1B4500C467CC /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		36C01530295B1D4200C467CC /* CityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailViewController.swift; sourceTree = "<group>"; };
+		36D70341296B88F100EA48E9 /* UserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataSource.swift; sourceTree = "<group>"; };
 		36E65F65295228C800667402 /* Horus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Horus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36E65F68295228C800667402 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36E65F6A295228C800667402 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,11 +128,12 @@
 				1871794729642EAB0062F166 /* CityDataDelegate.swift */,
 				1871794929642EC00062F166 /* CityDataSource.swift */,
 				1871794B296451B80062F166 /* SearchBarDelegate.swift */,
-				1811268A2966C107007A5D75 /* userCityDataSource.swift */,
+				1811268A2966C107007A5D75 /* UserCityDataSource.swift */,
 				1811268C2966DFD8007A5D75 /* User.swift */,
 				189CBC212968208400B54C3A /* currentWeatherMapDataSource.swift */,
 				189CBC232968265000B54C3A /* Weather.swift */,
 				189CBC25296829BC00B54C3A /* WeatherDataDelegate.swift */,
+				36D70341296B88F100EA48E9 /* UserDataSource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -268,9 +271,10 @@
 				1871794A29642EC00062F166 /* CityDataSource.swift in Sources */,
 				36E65F69295228C800667402 /* AppDelegate.swift in Sources */,
 				1871794829642EAB0062F166 /* CityDataDelegate.swift in Sources */,
+				36D70342296B88F100EA48E9 /* UserDataSource.swift in Sources */,
 				36E65F6B295228C800667402 /* SceneDelegate.swift in Sources */,
 				189CBC242968265000B54C3A /* Weather.swift in Sources */,
-				1811268B2966C107007A5D75 /* userCityDataSource.swift in Sources */,
+				1811268B2966C107007A5D75 /* UserCityDataSource.swift in Sources */,
 				1871794229642C930062F166 /* SearchCityViewController.swift in Sources */,
 				181126932967F2A5007A5D75 /* MapViewController.swift in Sources */,
 			);

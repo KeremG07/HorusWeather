@@ -10,39 +10,33 @@ import Firebase
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
+    private let userDataSource = UserDataSource()
 
-    @IBOutlet weak var emailText: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var passwordText: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func login(_ sender: Any) {
-        guard let email = emailText.text else {return}
-        guard let password = passwordText.text else { return }
+    @IBAction func login(_ sender: UIButton) {
+        guard let username = usernameTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
         
-        if email.isEmpty == true{
-            print("Enter email")
-            return
-        }
-        if password.isEmpty == true {
-            print("Enter password")
-            return
-        }
-        
-        Auth.auth().signIn(withEmail: email, password: password) {
-            (dataResult, error) in
-            if let e = error {
-                print("Error \(error?.localizedDescription)")
-            }
-            else {
-                self.performSegue(withIdentifier: "goToApp", sender: self)
+        if !username.isEmpty && !password.isEmpty {
+            userDataSource.checkUsernamePasswordExists(username: username, password: password) {
+                (result) in
+                if result {
+                    let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let citiesTableViewController = storyboard.instantiateViewController(withIdentifier: "HorusWeather") as! CitiesTableViewController
+                    citiesTableViewController.username = username
+                    self.show(citiesTableViewController, sender: UIButton.self)
+                } else {
+                    // No match
+                }
             }
         }
-    
     }
     
     

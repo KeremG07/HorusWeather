@@ -9,7 +9,7 @@ import UIKit
 
 class SearchCityViewController: UIViewController {
     private let cityDataSource = CityDataSource()
-    private let datasource = userCityDataSource()
+    private let datasource = UserCityDataSource()
     private var userId=0
     @IBOutlet weak var searchTableView: UITableView!
     
@@ -22,7 +22,7 @@ class SearchCityViewController: UIViewController {
         cityDataSource.delegate = self
         
         citySearchBar.delegate = self
-        datasource.readObject(index: 0,userId:self.userId)
+        datasource.readObject(index: 0, userId: self.userId)
     }
     
 
