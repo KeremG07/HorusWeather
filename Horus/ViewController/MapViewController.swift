@@ -12,6 +12,7 @@ class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     var userID = 0
+    var sentCity :String? = nil
     private let datasource = UserCityDataSource()
     private let weatherDataSource = currentWeatherMapDataSource()
     override func viewDidLoad() {
@@ -21,7 +22,7 @@ class MapViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
             let cityList = self.datasource.getCityList()
             var coordInfo = self.datasource.getCenter()
-            let region = MKCoordinateRegion(center: .init(latitude: CLLocationDegrees(coordInfo[2]), longitude: CLLocationDegrees(coordInfo[3])), latitudinalMeters: CLLocationDistance(222000*coordInfo[0]), longitudinalMeters: CLLocationDistance(222000*coordInfo[1]))
+            let region = MKCoordinateRegion(center: .init(latitude: CLLocationDegrees(coordInfo[2]), longitude: CLLocationDegrees(coordInfo[3])), latitudinalMeters: CLLocationDistance(150000*coordInfo[0]), longitudinalMeters: CLLocationDistance(150000*coordInfo[1]))
             self.mapView.setRegion(region, animated: true)
             for city in cityList{
                 //print(city.name)
@@ -64,9 +65,24 @@ class MapViewController: UIViewController {
 
 extension MapViewController: MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let annotate = view.annotation
+        let nameOfCity = view.annotation?.subtitle
+        
         print(view.annotation?.title)
         print(view.annotation)
+        print(view.annotation?.subtitle)
+        
+        
+        var newWindowViewController = storyboard?.instantiateViewController(withIdentifier: "cityDetail") as! CityDetailViewController
+        if let nameOfCity = nameOfCity,
+           let annotate = annotate{
+            newWindowViewController.cityIdentifier = nameOfCity ?? "Istanbul"
+        }
+        //newWindowViewController.cityIdentifier = "İstanbul"
+        
+           present(newWindowViewController, animated: true)
     }
+    
 }
 
 extension MapViewController: WeatherDataDelegate{

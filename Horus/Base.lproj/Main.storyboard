@@ -178,7 +178,7 @@
         <!--City Name-->
         <scene sceneID="o0t-df-mdF">
             <objects>
-                <viewController id="VKA-Z8-gdo" customClass="CityDetailViewController" customModule="Horus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cityDetail" id="VKA-Z8-gdo" customClass="CityDetailViewController" customModule="Horus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ac8-WU-AiP">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -354,14 +354,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GDg-5G-bSz">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDg-5G-bSz">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
+                                <connections>
+                                    <outlet property="delegate" destination="25N-f2-D5K" id="SOe-d0-a0U"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Kfe-LE-Nqt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GDg-5G-bSz" firstAttribute="leading" secondItem="Kfe-LE-Nqt" secondAttribute="leading" id="IS5-Yb-3yW"/>
+                            <constraint firstItem="Kfe-LE-Nqt" firstAttribute="bottom" secondItem="GDg-5G-bSz" secondAttribute="bottom" id="JXN-wk-XG2"/>
+                            <constraint firstItem="Kfe-LE-Nqt" firstAttribute="trailing" secondItem="GDg-5G-bSz" secondAttribute="trailing" id="R8O-oN-9W9"/>
+                            <constraint firstItem="Kfe-LE-Nqt" firstAttribute="top" secondItem="GDg-5G-bSz" secondAttribute="top" constant="47" id="SRc-Oq-5s6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="abN-yz-qhf"/>
                     <connections>
@@ -370,12 +378,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GeD-u9-AUI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="200" y="304"/>
+            <point key="canvasLocation" x="200" y="303.55450236966823"/>
         </scene>
         <!--City Added Info View Controller-->
         <scene sceneID="H1q-00-47E">
             <objects>
-                <viewController id="U0X-4u-ete" customClass="CityAddedInfoViewController" customModule="Horus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cityAdd" id="U0X-4u-ete" customClass="CityAddedInfoViewController" customModule="Horus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2gB-pi-w4U">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
