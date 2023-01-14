@@ -26,6 +26,40 @@ class UserCityDataSource: ObservableObject{
         return cityList[index]
     }
     
+    func getCenter() -> [Int]{
+        var minLat = 200
+        var maxLat  = -200
+        var minLon = 200
+        var maxLon = -200
+        //var totalLat = 0
+        //var totalLon = 0
+        
+        for city in self.cityList {
+            let curLon = Int(city.lon)
+            let curLat = Int(city.lat)
+            
+            if curLon <= minLon{
+                minLon=curLon
+            }
+            if curLon >= maxLon{
+                maxLon = curLon
+            }
+            if curLat <= minLat{
+                minLat=curLat
+            }
+            if curLat >= maxLat{
+                maxLat = curLat
+            }
+            
+            //totalLon += curLon
+            //totalLat += curLat
+                    
+        }
+        
+        return [(maxLat-minLat),(maxLon-minLon),Int((maxLat+minLat)/2),Int((maxLon+minLon)/2)]
+        
+    }
+    
     func pushObject(userId:String,city:City){
 
             //print("push started",self.cityNumber)

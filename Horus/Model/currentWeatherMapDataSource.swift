@@ -26,6 +26,8 @@ class currentWeatherMapDataSource { //struct değil class olması gerekiyor muta
     }
      */
     
+    
+    
     func getWeather(search:String) {
         print("Weather Call Sent for \(search)")
         let session = URLSession.shared

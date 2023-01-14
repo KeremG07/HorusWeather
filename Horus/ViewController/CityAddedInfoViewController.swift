@@ -14,8 +14,14 @@ class CityAddedInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addedInfo.text = "\(cityIdentifier) has added to list"
+        print(cityIdentifier)
         // Do any additional setup after loading the view.
     }
+    //override func viewWillAppear(_ animated: Bool) {
+    //    super.viewWillAppear(true)
+     //   addedInfo.text = "\(cityIdentifier) has added to list"
+    //    print(cityIdentifier)
+    //}
     
 
     /*

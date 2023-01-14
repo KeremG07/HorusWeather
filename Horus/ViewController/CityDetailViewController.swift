@@ -17,9 +17,11 @@ class CityDetailViewController: UIViewController {
     
     @IBOutlet weak var weatherDetailLabel: UILabel!
     
+    var cityIdentifier = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("City Identifier, name has reached to detail screen",cityIdentifier)
         // Do any additional setup after loading the view.
     }
     
