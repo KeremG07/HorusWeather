@@ -7,10 +7,12 @@
 
 import Foundation
 
-protocol CityDataDelegate{
-    
-    func CityDataLoaded()
-        
-    
-    
+protocol CityDataDelegate {
+    func cityListLoaded()
+    func cityDetailLoaded(city: City)
+}
+
+extension CityDataDelegate {
+    func cityListLoaded() {}
+    func cityDetailLoaded(city: City) {}
 }

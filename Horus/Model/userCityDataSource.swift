@@ -9,13 +9,16 @@ import Foundation
 import FirebaseDatabase
 import FirebaseDatabaseSwift
 
-class UserCityDataSource: ObservableObject{
+class UserCityDataSource: ObservableObject {
     
     private var cityList : [City] = []
-    private var cityNumber = 0
+    
     private let ref = Database.database(url: "https://horus-weather-app-8eb89-default-rtdb.europe-west1.firebasedatabase.app/").reference()
     
-    func getCityList() -> [City]{
+    var delegate: CityDataDelegate?
+    
+    func getCityList() -> [City] {
+        print(cityList)
         return cityList
     }
     
@@ -31,8 +34,6 @@ class UserCityDataSource: ObservableObject{
         var maxLat  = -200
         var minLon = 200
         var maxLon = -200
-        //var totalLat = 0
-        //var totalLon = 0
         
         for city in self.cityList {
             let curLon = Int(city.lon)
@@ -50,9 +51,6 @@ class UserCityDataSource: ObservableObject{
             if curLat >= maxLat{
                 maxLat = curLat
             }
-            
-            //totalLon += curLon
-            //totalLat += curLat
                     
         }
         
@@ -60,38 +58,58 @@ class UserCityDataSource: ObservableObject{
         
     }
     
-    func pushObject(userId:String,city:City){
-
-            //print("push started",self.cityNumber)
-            self.ref.child(userId).child(String(cityNumber)).setValue(city.toDictionary)
-            cityNumber += 1
-   
+    func pushCityWithCityID(username: String, city: City) {
+        let cityID = city.id
+        self.ref.child(username).child(String(cityID)).setValue(city.toDictionary)
+        DispatchQueue.main.async {
+            self.readCitiesIntoCityList(username: username)
+            self.delegate?.cityListLoaded()
+        }
     }
     
-    func readObject(index:Int,userId:Int){
-        //print("readObject",index)
-        if index == 0{
-            cityList.removeAll(keepingCapacity: false)
+    func deleteCity(username: String, city: City, completion: @escaping (City?) -> Void) {
+        let cityID = city.id
+        self.ref.child(username).child(String(cityID)).removeValue()
+        DispatchQueue.main.async {
+            self.readCitiesIntoCityList(username: username)
+            self.delegate?.cityListLoaded()
         }
-        var object:City? = nil
-        ref.child(String(userId)).child(String(index))
-            .observe(.value){ snapshot in do{
-                object = try snapshot.data(as: City.self)
-                if let object = object{
-                    self.cityList.append(object)
+    }
+    
+    func readCitiesIntoCityList(username: String) {
+        ref.child(username).observe(.value) { snapshot in
+            do {
+                self.cityList.removeAll(keepingCapacity: false)
+                for child in snapshot.children {
+                    if let childSnapshot = child as? DataSnapshot {
+                        var object: City? = nil
+                        object = try childSnapshot.data(as: City.self)
+                        if let object = object {
+                            self.cityList.append(object)
+                        }
+                    }
                 }
-                //print(self.cityList)
-                self.readObject(index: (index+1),userId: userId)
-            
-            }catch{
-                print("Can not convert City",index)
-                self.cityNumber = self.cityList.count
-                
+                DispatchQueue.main.async {
+                    self.delegate?.cityListLoaded()
+                }
+            } catch {
+                print("Cannot read into city list")
             }
-                
+        }
+        ref.child(username).observe(.childRemoved) { snapshot in
+            do {
+                var object: City? = nil
+                object = try snapshot.data(as: City.self)
+                if let object = object {
+                    self.cityList.removeAll { $0.id == object.id }
+                }
+                DispatchQueue.main.async {
+                    self.delegate?.cityListLoaded()
+                }
+            } catch {
+                print("Cannot remove from city list")
             }
-        
-        
+        }
     }
     
 }

@@ -9,4 +9,6 @@ import UIKit
 
 class CityDetailButtonsCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var forecastButtonImageView: UIImageView!
+    
 }
