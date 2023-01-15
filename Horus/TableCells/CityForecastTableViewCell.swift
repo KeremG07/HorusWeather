@@ -1,18 +1,18 @@
 //
-//  CityTableViewCell.swift
+//  CityForecastTableViewCell.swift
 //  Horus
 //
-//  Created by Kerem Girenes on 27.12.2022.
+//  Created by Kerem Girenes on 15.01.2023.
 //
 
 import UIKit
 
-class CityTableViewCell: UITableViewCell {
+class CityForecastTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var cityNameLabel: UILabel!
+    @IBOutlet weak var hourLabel: UILabel!
     
-    @IBOutlet weak var weatherDegreeLabel: UILabel!
-    
+    @IBOutlet weak var valueLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

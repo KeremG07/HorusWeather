@@ -8,9 +8,5 @@
 import Foundation
 
 protocol WeatherDataDelegate{
-    
     func WeatherDataLoaded()
-        
-    
-    
 }

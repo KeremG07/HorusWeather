@@ -10,8 +10,4 @@ import UIKit
 
 protocol SearchBarDelegate:UISearchBarDelegate,UISearchDisplayDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) 
-
-        
-    
-    
 }

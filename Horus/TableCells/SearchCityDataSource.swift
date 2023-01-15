@@ -7,16 +7,20 @@
 
 import Foundation
 
-class CityDataSource{ //struct değil class olması gerekiyor mutable olması için
+class SearchCityDataSource {
     
-    private var CityList :[City] = []
+    var cityList: [City] = []
+    
     private let baseURL = "https://api.weatherapi.com/v1/search.json?key=49a0562ede0447a280b91717222912&q="
+    
     var delegate: CityDataDelegate?
+    
     init(){
+        
     }
     
     func getNumberOfCities() -> Int {
-        return CityList.count
+        return cityList.count
     }
     
     func getListOfCities(search:String) {
@@ -28,39 +32,27 @@ class CityDataSource{ //struct değil class olması gerekiyor mutable olması i�
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             let dataTask = session.dataTask(with: request){
                 data,response,error in
-                //print(data) //step 1
-                
-                if let data = data { //step2
+                if let data = data {
                     if String(data:data,encoding: .utf8)?.first != "{" {
-                        //print(String(data:data,encoding: .utf8))
-                        let decoder =    JSONDecoder()
-                        
-                        self.CityList = try! decoder.decode([City].self, from:data) //step3
-                        //print(self.CityList) // step4
+                        let decoder = JSONDecoder()
+                        self.cityList = try! decoder.decode([City].self, from:data)
                         DispatchQueue.main.async {
-                            self.delegate?.CityDataLoaded()
+                            self.delegate?.cityListLoaded()
                             print("Search Data Got for \(search)")
                         }
                     }
-                    
-                    
-                    
                 }
-                //print("B")
             }
-            //print("C")
             dataTask.resume()
-            
         }
-        
-    }
-    func getCity(for id:Int) -> City? {
-            guard id < CityList.count else {
-                return nil
-            }
-            return CityList[id]
-        
     }
     
+    func getCity(for id:Int) -> City? {
+        guard id < cityList.count else {
+            return nil
+        }
+        return cityList[id]
     }
+    
+}
 
